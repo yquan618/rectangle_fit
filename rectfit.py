@@ -91,8 +91,10 @@ def get_J(V, data, phi, px, py):
     q1 = p1 * (k - 0.5) ** 3 - p2 * (k - 0.5)
     q2 = p3 * np.sqrt((k ** 2 - k) * (k - k ** 2 - p4))
     v = -2.5 * k + 1.75 - (np.cbrt(q1 + q2) + np.cbrt(q1 - q2))
+    v[v == 1.0] = 1 - 1E-12 #avoid inf number in calculation of dphi_k
+    v[v == 0.0] = 1E-12 
     kk = (k - 1) * k
-    kk[kk == 0] = -1E-9 #avoid inf number
+    kk[kk == 0] = -1E-12 #avoid inf number in calculation of dq2_dk
     dq1_dk = 3 * p1 * (k - 0.5) ** 2 - p2
     dq2_dk = -p3 * (2 * k - 1) * (p4 + 2 * kk) / (2 * np.sqrt(-kk * (p4 + kk)))
     q1p2_m2_3 = 1 / np.cbrt((q1 + q2) ** 2)
