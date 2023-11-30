@@ -1,8 +1,7 @@
 """
-This is the official implementation of the paper: [Optimised Least Squares Approach for Accurate Rectangle Fitting
-] (https://arxiv.org/abs/2307.06528)
+This is the official implementation of the paper: [Optimised Least Squares Approach for Accurate Polygon and Ellipse Fitting](https://arxiv.org/abs/2307.06528)
 If you use this code or any part of it in your research, please cite our paper:
-Y. Quan, S. Chen, Optimised Least Squares Approach for Accurate Rectangle Fitting. arXiv:2307.06528 [cs.CV], 2023.
+Y. Quan, S. Chen, Optimised Least Squares Approach for Accurate Polygon and Ellipse Fitting. arXiv:2307.06528 [cs.CV], 2023. https://arxiv.org/abs/2307.06528
 """
 
 import numpy as np
